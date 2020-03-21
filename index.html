@@ -4,11 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Panel</title>
   </head>
   <body class='container text-center bg-info'>
 	  <span class="text-right mr-3">
@@ -17,17 +17,17 @@
 	<div class="row">
 		<div class="col">
 			<h1 class="text-center">
-				14:23
+				7:23 AM
 			</h1>
 
 		</div>
 		<div class="col mr-3">
 			<h2 class="text-center">
-				☼
-			+16 C
+				<img src="cloud.png" alt="" height="32px">
+				+11 <sup>&#176;</sup> C
 			</h2>
 
-
+		</div>
 		</div>
 	</div>
 
@@ -42,20 +42,82 @@
 		</div>
 		<div class="col">
 			<ul class="list-group">
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-					Bus No.87 
-					<span class="">14:27</span>
-				  </li>
 
-				  <li class="list-group-item d-flex justify-content-between align-items-center">
-					Tram No.15
-					<span class=""> 14:33</span>
-				  </li>
-				  <li class="list-group-item d-flex justify-content-between align-items-center">
-					Tram No.17
-					<span class=""> 14:40</span>
-				  </li>
-			  </ul>
+				<div class="accordion" id="accordionBusClosest">
+				</div>
+
+				<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseBusClosest" aria-expanded="false" aria-controls="collapseBusClosest">
+					<span>
+			
+						<i class="fa fa-bus"></i> No.87 </span>
+					<span class="">7:27 AM 	<i class="fa fa-sort-down"></i>
+					</span>
+				</li>
+
+				<div id="collapseBusClosest" class="collapse" aria-labelledby="headingThree" data-parent="#accordionBusClosest">
+					<div class="card-body">
+						<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseBusClosest" aria-expanded="false" aria-controls="collapseBusClosest">
+							Next: <span><i class="fa fa-bus"></i> No.87 </span>
+							<span class="">7:33 AM</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseBusClosest" aria-expanded="false" aria-controls="collapseBusClosest">
+							Next: <span><i class="fa fa-bus"></i> No.87 </span>
+							<span class="">7:41 AM</span>
+						</li>
+					</div>
+				</div>
+
+				<div class="accordion" id="accordionTramClosest">
+				</div>
+
+				<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseTramClosest" aria-expanded="false" aria-controls="collapseTramClosest">
+					<span>
+						<i class="fa fa-train"></i>
+						No.17 </span>
+					<span class="">7:32 AM 	<i class="fa fa-sort-down"></i>
+					</span>
+				</li>
+
+				<div id="collapseTramClosest" class="collapse" aria-labelledby="headingThree" data-parent="#accordionTramClosest">
+					<div class="card-body">
+						<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseTramClosest" aria-expanded="false" aria-controls="collapseTramClosest">
+							Next: <span><i class="fa fa-train"></i> No.17 </span>
+							<span class="">7:38 AM</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseTramClosest" aria-expanded="false" aria-controls="collapseTramClosest">
+							Next: <span><i class="fa fa-train"></i> No.17 </span>
+							<span class="">7:44 AM</span>
+						</li>
+					</div>
+				</div>
+
+
+				<div class="accordion" id="accordionTramNext">
+				</div>
+
+				<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseTramNext" aria-expanded="false" aria-controls="collapseTramNext">
+					<span>
+						<i class="fa fa-train"></i>
+						No.15 </span>
+					<span class="">7:39 AM 	<i class="fa fa-sort-down"></i>
+					</span>
+				</li>
+
+				<div id="collapseTramNext" class="collapse" aria-labelledby="headingThree" data-parent="#accordionTramNext">
+					<div class="card-body">
+						<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseTramNext" aria-expanded="false" aria-controls="collapseTramNext">
+							Next: <span><i class="fa fa-train"></i> No.15 </span>
+							<span class="">7:43 AM</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center"  data-toggle="collapse" data-target="#collapseTramNext" aria-expanded="false" aria-controls="collapseTramNext">
+							Next: <span><i class="fa fa-train"></i> No.15 </span>
+							<span class="">7:57 AM</span>
+						</li>
+					</div>
+				</div>
+
+
+			</ul>
 		</div>
 	</div>
 
@@ -68,7 +130,8 @@
 		// 	m ='0'+m;
 		// }
 		d = n.getDate();
-		document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+		// document.getElementById("date").innerHTML = d + "/0" + m + "/" + y;
+		document.getElementById("date").innerHTML = '4/20/2020';
 	</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
